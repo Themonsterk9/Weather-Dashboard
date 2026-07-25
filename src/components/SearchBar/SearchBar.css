@@ -1,0 +1,132 @@
+.search-bar-container {
+  width: 100%;
+  position: relative;
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.input-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  height: 46px;
+  padding: 0 16px 0 44px;
+  border-radius: 14px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 15px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
+}
+
+.search-input:focus {
+  outline: none;
+  background: var(--bg-secondary);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+.search-input.input-error {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+.error-tip {
+  position: absolute;
+  bottom: -22px;
+  left: 4px;
+  font-size: 11px;
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.search-btn {
+  height: 46px;
+  padding: 0 22px;
+  border-radius: 14px;
+  background: var(--accent-color);
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 14px;
+  border: none;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.search-btn:hover:not(:disabled) {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.search-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.search-btn:disabled, .location-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.location-btn {
+  height: 46px;
+  width: 46px;
+  border-radius: 14px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.location-btn:hover:not(:disabled) {
+  background: var(--bg-tertiary);
+  border-color: var(--text-muted);
+  transform: translateY(-1px);
+}
+
+.location-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.spinner {
+  animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 576px) {
+  .search-form {
+    gap: 6px;
+  }
+  .search-btn {
+    padding: 0 14px;
+  }
+}
